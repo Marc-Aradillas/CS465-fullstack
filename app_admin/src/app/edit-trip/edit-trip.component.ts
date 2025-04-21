@@ -57,6 +57,7 @@ export class EditTripComponent implements OnInit {
         next: (value: any) => {
           this.trip = value;
           // Populate our record into the form
+          
           // Format start date before setting
           const startDate = new Date(value[0].start)
           const formattedDate = startDate.toISOString().split('T')[0]; // 'yy-mm-dd''
@@ -65,7 +66,7 @@ export class EditTripComponent implements OnInit {
             ...value[0],
             start: formattedDate // set formatted date
           });
-          
+
           if (!value) {
             this.message = 'No Trip Retrieved!';
           }
